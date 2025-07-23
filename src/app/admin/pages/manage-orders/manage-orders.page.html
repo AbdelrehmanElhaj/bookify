@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Manage Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let order of orders">
+      <ion-label>
+        <h2>{{ order.book }}</h2>
+        <p>User: {{ order.user }}</p>
+        <p>Date: {{ order.date }}</p>
+        <p>Status: <strong>{{ order.status }}</strong></p>
+      </ion-label>
+
+      <ion-button
+        slot="end"
+        color="success"
+        size="small"
+        *ngIf="order.status === 'Pending'"
+        (click)="updateStatus(order.id, 'Approved')"
+      >
+        Approve
+      </ion-button>
+
+      <ion-button
+        slot="end"
+        color="danger"
+        size="small"
+        *ngIf="order.status === 'Pending'"
+        (click)="updateStatus(order.id, 'Rejected')"
+      >
+        Reject
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Stats</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Total Books: {{ totalBooks }}</p>
+      <p>Total Orders: {{ totalOrders }}</p>
+      <p>Total Users: {{ totalUsers }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" routerLink="/admin/pages/manage-books">
+    Manage Books
+  </ion-button>
+
+  <ion-button expand="block" routerLink="/admin/pages/manage-orders">
+    Manage Orders
+  </ion-button>
+</ion-content>

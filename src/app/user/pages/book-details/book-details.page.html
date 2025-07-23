@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="book">
+    <img [src]="book.image" />
+    <ion-card-header>
+      <ion-card-title>{{ book.title }}</ion-card-title>
+      <ion-card-subtitle>{{ book.author }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ book.description }}</p>
+      <p>Rating: {{ book.rating }}</p>
+      <ion-button expand="block" (click)="goToBooking()">Rent Now</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

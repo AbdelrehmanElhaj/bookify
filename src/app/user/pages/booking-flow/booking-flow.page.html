@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="book">
+    <ion-card-header>
+      <ion-card-title>{{ book.title }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Select Date</ion-label>
+    <ion-datetime
+      presentation="date"
+      [(ngModel)]="date"
+      name="bookingDate"
+    ></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="block" (click)="confirmBooking()" [disabled]="!date">Confirm Booking</ion-button>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Manage Books</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let book of books">
+      <ion-label>
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.author }} - ⭐ {{ book.rating }}</p>
+      </ion-label>
+      <ion-button fill="outline" slot="end">Edit</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="primary">Add New Book</ion-button>
+</ion-content>
